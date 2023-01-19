@@ -59,6 +59,17 @@ function getWorkingHours(empCheck)
 }
     let empHrs=0;
     let empcheck=Math.floor(Math.random()*10)%3;
-    empHrs= getWorkingHours(empCheck);
+    empHrs= getWorkingHours(this.empCheck);
     let empWage=empHrs*Wage_per_Hours;
     console.log("Emp Wage: " +empWage);
+
+  // calculating Wages for a Month
+    const Num_Of_Working_Days=2;
+    let emphrs=0;
+    for(let day=0;day<Num_Of_Working_Days;day++)
+    {
+        let empCheck=Math.floor(Math.random()*10)%3;
+        emphrs+=getWorkingHours(empCheck);
+    }
+    let empwage=emphrs*Wage_per_Hours;
+    console.log("Total hrs: " +emphrs+" Emp Wage: " +empwage);
