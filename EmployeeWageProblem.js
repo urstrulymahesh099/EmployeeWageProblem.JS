@@ -21,14 +21,13 @@ myattendence.attendence();
 
 //Calculate Daily Employee Wage based on part time or full time work
 
-   
-        const Part_Time=1;
+const Part_Time=1;
 const Full_Time=2;
 const Part_Time_Hours=4;
 const Full_Time_Hours=8;
 const Wage_per_Hours=20;
 
-let empHrs=0;
+ empHrs=0;
 empcheck=Math.floor(Math.random()*10)%3;
 switch(empcheck)
 {
@@ -41,5 +40,25 @@ switch(empcheck)
     default:
         empHrs=0;
 }
-let empWage=empHrs*Wage_per_Hours;
+ empWage=empHrs*Wage_per_Hours;
 console.log("Emp Wage: " +empWage);
+//Refactored Code To Write Function For Dayily Working Hours
+function getWorkingHours(empCheck)
+{
+    switch(empCheck)
+    {
+    case Part_Time:
+        return Part_Time_Hours;
+        break;
+     case Full_Time:
+        return Full_Time_Hours;
+        break;
+     default :
+        return 0;
+    }
+}
+    let empHrs=0;
+    let empcheck=Math.floor(Math.random()*10)%3;
+    empHrs= getWorkingHours(empCheck);
+    let empWage=empHrs*Wage_per_Hours;
+    console.log("Emp Wage: " +empWage);
